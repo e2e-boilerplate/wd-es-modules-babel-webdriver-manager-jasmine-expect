@@ -1,31 +1,27 @@
-import test from "ava";
-import * as wd from "wd";
-import config from "../config";
+const wd = require("wd");
+const config = require("../config");
 
 const url = "https://e2e-boilerplate.github.io/sandbox/";
 
-let browser;
+describe("Sandbox", () => {
+  let browser;
 
-test.before(async () => {
-  browser = wd.promiseChainRemote();
-  return config(url, browser);
-});
-
-test.after(async () => {
-  return browser.quit();
-});
-
-test("should be on Sandbox", async (t) => {
-  return browser.title().then((title) => {
-    t.is(title, "Sandbox");
+  beforeEach(function fn() {
+    browser = wd.promiseChainRemote();
+    return config(url, browser);
   });
-});
 
-test("should have a page header", async (t) => {
-  return browser
-    .elementByTagName("h1")
-    .text()
-    .then((header) => {
-      t.is(header, "Sandbox");
-    });
+  afterEach(() => {
+    return browser.quit();
+  });
+
+  it("should be on Sandbox", async () => {
+    const title = await browser.title();
+    expect(title).toEqual("Sandbox");
+  });
+
+  it("should have a page header", async () => {
+    const header = await browser.elementByTagName("h1").text();
+    expect(header).toEqual("Sandbox");
+  });
 });

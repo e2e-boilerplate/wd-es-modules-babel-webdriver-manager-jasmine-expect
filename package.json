@@ -1,20 +1,16 @@
 {
   "author": "Girma Nigusse <xgirma@gmail.com>",
-  "ava": {
-    "babel": true
-  },
   "bugs": {
-    "url": "https://github.com/e2e-boilerplate/wd-es-modules-babel-webdriver-manager-ava/issues"
+    "url": "https://github.com/e2e-boilerplate/wd-es-modules-babel-webdriver-manager-jasmine-expect/issues"
   },
   "dependencies": {
-    "ava": "3.6.0",
     "chai-as-promised": "7.1.1",
+    "jasmine": "3.5.0",
     "wd": "1.12.1",
     "webdriver-manager": "12.1.7"
   },
-  "description": "WD end-to-end test automation boilerplate. Using ES Modules, Babel, Webdriver-Manager and AVA.",
+  "description": "WD end-to-end test automation boilerplate. Using ES Modules, Babel, Webdriver-Manager, Jasmine and Expect.",
   "devDependencies": {
-    "@ava/babel": "1.0.1",
     "@babel/cli": "7.8.4",
     "@babel/core": "7.9.0",
     "@babel/plugin-transform-runtime": "7.9.0",
@@ -32,20 +28,21 @@
     "prettier": "2.0.4",
     "pretty-quick": "2.0.1"
   },
-  "homepage": "https://github.com/e2e-boilerplate/wd-es-modules-babel-webdriver-manager-ava#readme",
+  "homepage": "https://github.com/e2e-boilerplate/wd-es-modules-babel-webdriver-manager-jasmine-expect#readme",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged --allow-empty"
     }
   },
   "keywords": [
-    "ava",
     "babel",
     "boilerplate",
     "e2e",
     "e2e tests",
     "example",
+    "expect",
     "integration test",
+    "jasmine",
     "selenium-webdriver",
     "wd",
     "webdriver manager"
@@ -56,15 +53,15 @@
       "prettier --write"
     ]
   },
-  "name": "wd-es-modules-babel-webdriver-manager-ava",
+  "name": "wd-es-modules-babel-webdriver-manager-jasmine-expect",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/e2e-boilerplate/wd-es-modules-babel-webdriver-manager-ava.git"
+    "url": "git+https://github.com/e2e-boilerplate/wd-es-modules-babel-webdriver-manager-jasmine-expect.git"
   },
   "scripts": {
     "lint": "npx eslint --ext .js ./ --fix",
     "start:webdriver": "npx webdriver-manager start --versions.chrome 80.0.3987.106",
-    "test": "npx ava --timeout=50s",
+    "test": "npx jasmine",
     "update:webdriver": "npx webdriver-manager update --gecko false --versions.chrome 80.0.3987.106"
   },
   "version": "1.0.0"
